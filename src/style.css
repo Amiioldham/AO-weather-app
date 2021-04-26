@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+form {
+  width: 82%;
+  display: block;
+  margin: 25px auto 0;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-weight: 600;
+  line-height: 36px;
+  margin: 10px 0;
+}
+ul {
+  padding: 0;
+  margin: 20px, 10px;
+  border-radius: 10px;
+}
+ul :hover {
+  background: #5295b6;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  transition: all 250ms ease-in-out;
+}
+li {
+  font-size: 14px;
+}
+i {
+  font-size: 20px;
+  opacity: 0.7;
+  padding: 0 8px;
+}
+p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 15px 0;
+}
+.container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  border: 1px solid #5295b6;
+  border-radius: 10px;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+
+.card {
+  border-radius: 10px;
+  column-width: 80%;
+}
+.card-title {
+  margin: 0;
+}
+.temperature {
+  font-size: 30px;
+}
+.list-group-item {
+  padding: 20px 12px;
+  border-radius: 10px;
+}
+.units {
+  font-weight: 300;
+  font-size: 20px;
+}
+#current-location-search {
+  margin-left: 15px;
+}
+
+#live-day-time {
+  font-size: 18px;
+  opacity: 0.7;
+}
+#celcius-link {
+  text-decoration: none;
+}
+#fahrenheit-link {
+  text-decoration: none;
+}
