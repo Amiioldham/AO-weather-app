@@ -22,8 +22,9 @@ function formatDayTime(date) {
 
 function showWeather(response) {
   document.querySelector("#city-name-display").innerHTML = response.data.name;
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    celciusTemperature
   );
   document
     .querySelector("#main-icon")
@@ -70,17 +71,18 @@ function displayCurrentWeather(event) {
 }
 function convertToFarhenheit(event) {
   event.preventDefault();
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round((temperature * 9) / 5 + 32);
+  let farhenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farhenheitTemperature);
 }
 function convertToCelcius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperature = Number(temperature);
-  temperatureElement.innerHTML = Math.round(((temperature - 32) * 5) / 9);
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
 let liveDayTime = document.querySelector("#live-day-time");
@@ -93,10 +95,12 @@ submitCity.addEventListener("submit", searchCity);
 let currentLocation = document.querySelector("#current-location-search");
 currentLocation.addEventListener("click", displayCurrentWeather);
 
-let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
-fahrenheitTemperature.addEventListener("click", convertToFarhenheit);
+let celciusTemperature = null;
 
-let celciusTemperature = document.querySelector("#celcius-link");
-celciusTemperature.addEventListener("click", convertToCelcius);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFarhenheit);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelcius);
 
 search("London");

@@ -19,9 +19,6 @@ h3 {
   line-height: 36px;
   margin: 10px 0;
 }
-h3 .units :hover {
-  font-weight: 700;
-}
 h7 {
   margin-left: 25%;
   font-size: 12px;
@@ -70,6 +67,11 @@ p {
 }
 .temperature {
   font-size: 32px;
+}
+.temperatureDisplay .active {
+  color: #212529;
+  font-weight: 700;
+  cursor: default;
 }
 .list-group-item {
   padding: 10px 12px;
