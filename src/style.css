@@ -9,6 +9,7 @@ form {
 h1 {
   font-size: 36px;
   font-weight: 700;
+  text-transform: capitalize;
 }
 h2 {
   font-size: 24px;
