@@ -21,7 +21,6 @@ function formatDayTime(date) {
 }
 
 function showWeather(response) {
-  console.log(response);
   document.querySelector("#city-name-display").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -58,7 +57,7 @@ function searchCity(event) {
   search(city);
 }
 
-function searchLocation(position) {
+function searchCurrentLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "e5c406f120fe6a4c7b85f5bd91fb964e";
@@ -67,9 +66,8 @@ function searchLocation(position) {
 }
 function displayCurrentWeather(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
-
 function convertToFarhenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
