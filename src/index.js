@@ -21,29 +21,26 @@ function formatDayTime(date) {
 }
 
 function displayForecast() {
-  let forecastElement = document.querySelector(".forecast");
-  forecastElement.innerHTML = `
-    <ul>
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<ul>`;
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
       <li class="list-group-item">
-        <img src="" alt="" id="day-one-icon"></i><span id="forecast-day-one">Mon</span>
+        <img src="http://openweathermap.org/img/wn/01n@2x.png" alt="" class="forecast-icon"></i>
+        <span class="forecast-day">${day}</span>
+        <span class="forecast-temperature">
+        <span class="forecast-max-temp">12°</span>
+        <span class="forecast-min-temp">4°</span> 
+        </span>
       </li>
-      <br />
-      <li class="list-group-item">
-        <img src="" alt="" id="day-two-icon"></i><span id="forecast-day-two">Tues</span>
-      </li>
-      <br />
-      <li class="list-group-item">
-        <img src="" alt="" id="day-three-icon"></i><span id="forecast-day-three">Wed</span>
-      </li>
-        <br />
-      <li class="list-group-item">
-        <img src="" alt="" id="day-four-icon"></i><span id="forecast-day-four">Thurs</span>
-      </li>
-      <br />
-      <li class="list-group-item">
-        <img src="" alt="" id="day-five-icon"></i><span id="forecast-day-five">Fri</span>
-      </li>
-      </ul>`;
+      <br />`;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayWeather(response) {

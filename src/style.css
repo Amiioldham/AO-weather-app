@@ -63,6 +63,21 @@ p {
 .card-title {
   margin: 0;
 }
+.forecast-icon {
+  height: 30px;
+}
+.forecast-max-temp {
+  font-weight: 700;
+}
+.forecast-min-temp {
+  font-weight: 700;
+  opacity: 0.7;
+}
+.forecast-temperature {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
 .github-link {
   display: block;
   text-align: center;
@@ -70,8 +85,9 @@ p {
   padding-bottom: 20px;
 }
 .list-group-item {
-  padding: 10px 12px;
+  padding: 5px 12px;
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 .live-day-time {
   font-size: 18px;
