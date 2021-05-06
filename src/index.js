@@ -19,7 +19,6 @@ function formatDayTime(date) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<ul>`;
@@ -42,9 +41,11 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 function displayWeather(response) {
-  document.querySelector("#city-name-display").innerHTML = response.data.name;
+  console.log(response);
+  document.querySelector(
+    "#city-name-display"
+  ).innerHTML = `${response.data.name} <span class="country">${response.data.sys.country}</span>`;
   celciusTemperature = response.data.main.temp;
   document.querySelector("#temperature").innerHTML = Math.round(
     celciusTemperature
