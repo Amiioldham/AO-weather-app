@@ -43,7 +43,7 @@ p {
   max-width: 700px;
   margin-top: 30px;
   margin-bottom: 5px;
-  padding: 35px 0 15px;
+  padding: 35px 0;
   border: 1px solid #5295b6;
   border-radius: 10px;
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
